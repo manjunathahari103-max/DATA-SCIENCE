@@ -1,0 +1,70 @@
+# Import Libraries
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load Dataset
+df = pd.read_csv("supermarket_sales.csv")
+
+# Display first 5 rows
+print(df.head())
+
+# Dataset Information
+print("\nDataset Info")
+print(df.info())
+
+# Total Sales
+print("\nTotal Sales:", df["Total"].sum())
+
+# Average Sales
+print("Average Sales:", df["Total"].mean())
+
+# Highest Sales Branch
+print("\nSales by Branch")
+print(df.groupby("Branch")["Total"].sum())
+
+# Product Line Sales
+print("\nSales by Product Line")
+print(df.groupby("Product line")["Total"].sum())
+
+# Payment Method
+print("\nPayment Method")
+print(df["Payment"].value_counts())
+
+# ---------------------------
+# Bar Chart
+# ---------------------------
+df.groupby("Product line")["Total"].sum().plot(kind="bar")
+plt.title("Sales by Product Line")
+plt.xlabel("Product Line")
+plt.ylabel("Total Sales")
+plt.xticks(rotation=45)
+plt.show()
+
+# ---------------------------
+# Pie Chart
+# ---------------------------
+df["Payment"].value_counts().plot(kind="pie", autopct="%1.1f%%")
+plt.title("Payment Methods")
+plt.ylabel("")
+plt.show()
+
+# ---------------------------
+# Line Chart
+# ---------------------------
+daily_sales = df.groupby("Date")["Total"].sum()
+
+daily_sales.plot(figsize=(10,5))
+plt.title("Daily Sales")
+plt.xlabel("Date")
+plt.ylabel("Sales")
+plt.xticks(rotation=90)
+plt.show()
+
+# ---------------------------
+# Correlation Heatmap
+# ---------------------------
+import seaborn as sns
+
+sns.heatmap(df.corr(numeric_only=True), annot=True)
+plt.title("Correlation Matrix")
+plt.show()
