@@ -13,3 +13,10 @@
 *MENTOR* : NEELA SANTOSH
 
 ## I HAVE COMPLETED MY TASK USING JAVA SCRIPT AND VS CODE ##
+
+
+
+
+*OUT PUT OF TASK 1*
+
+<img width="736" height="383" alt="Image" src="https://github.com/user-attachments/assets/6e11b57f-f4cb-4afb-8862-24c728b8533b" />
