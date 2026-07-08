@@ -28,3 +28,5 @@
 
 
 *OUT PUT OF TASK 3*
+
+<img width="796" height="300" alt="Image" src="https://github.com/user-attachments/assets/facb29fd-2e6b-47c4-953a-b0c6a5005a9a" />
